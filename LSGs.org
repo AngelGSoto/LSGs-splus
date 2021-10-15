@@ -1,0 +1,16 @@
+e-mail:
+Oi Luís, aqui uma das tabelas (Fornax.csv)
+é a que contem 120 mil objetos que tem os
+parâmetros corretos para 
+serem LSBs nos 23 campos de Fornax.
+E o outro ConfimedLSBs... são 122 galáxias
+LSBs confirmadas da literatura que
+junto com as 199 (total de 321) que eu já
+tinha enviado são as que vamos usar para treinar. 
+
+Uma coisa para diminuir os 120 mil objetos seria
+restringir um pouco mais os parâmetros plotando
+os Mu_max, Kron_radius
+e r_auto de todas as 321 LSBs e so pegar dos 120
+mil objetos os que tiverem os parâmetros dentro
+do range de parâmetro destas 321.
