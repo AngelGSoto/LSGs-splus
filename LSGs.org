@@ -32,10 +32,10 @@ do range de parâmetro destas 321.
 
 ** HDBSCAN
 
-   + I first plot the parameter =MU MAX=, =Kron Radius= and =r_auto=. The results are in
-     in the notebook [[file:Analizyn-LSG.ipynb][:Analizyn-LSG]].
+   + I first plotted the parameters: =MU MAX=, =Kron Radius= and =r_auto=. The results are in
+      the notebook [[file:Analizyn-LSG.ipynb][:Analizyn-LSG]].
 
-   I implemented HDBSCAN to the sample of LSB galaxies candidates using as input
+   I then implemented HDBSCAN to the sample of LSB galaxies candidates using as input
    parameter =MU MAX=, =Kron Radius= and =r_auto=. It is possible to see the procedure [[file:MLs-tecniques.ipynb][here]].
    
 
