@@ -1,4 +1,17 @@
-e-mail:
+#+TITLE: LSB galaxy
+* Identifying LSB galaxy
+:PROPERTIES:
+:ID:       
+:END:
+
+** Motivation
+
+   I am trying to identify LSB galaxy using unsupervised ML.
+
++ Email of the Prof Claudia
+     
+#+BEGIN_SRC  e-mail
+
 Oi Luís, aqui uma das tabelas (Fornax.csv)
 é a que contem 120 mil objetos que tem os
 parâmetros corretos para 
@@ -14,3 +27,33 @@ os Mu_max, Kron_radius
 e r_auto de todas as 321 LSBs e so pegar dos 120
 mil objetos os que tiverem os parâmetros dentro
 do range de parâmetro destas 321.
+
+#+END_SRC
+
+** HDBSCAN
+
+   + I first plot the parameter =MU MAX=, =Kron Radius= and =r_auto=. The results are in
+     in the notebook [[file:Analizyn-LSG.ipynb][:Analizyn-LSG]].
+
+   I implemented HDBSCAN to the sample of LSB galaxies candidates using as input
+   parameter =MU MAX=, =Kron Radius= and =r_auto=. It is possible to see the procedure [[file:MLs-tecniques.ipynb][here]].
+   
+
+   =HDBSCAN= found 7 cluster:
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-0.csv
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-1.csv
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-2.csv
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-3.csv
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-4.csv
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-5.csv
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-6.csv
+
+   and the noise:
+   : cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-noise.csv
+
+
+  - The =cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-6.csv= file contains
+    the cluster that coincides with confirmed LSB galaxies in the different plots.
+    This cluster have around 80 mil galaxies.
+
+** Pomegranate and Gaussian Mixture Models approaches 
