@@ -54,6 +54,6 @@ do range de parâmetro destas 321.
 
   - The =cluster-hdbscan/LSGs-candidate-HDBSCAN-cluster-6.csv= file contains
     the cluster that coincides with confirmed LSB galaxies in the different plots.
-    This cluster have around 80 mil galaxies.
+    This cluster has around 80 mil galaxies.
 
 ** Pomegranate and Gaussian Mixture Models approaches 
