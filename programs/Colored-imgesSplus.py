@@ -60,7 +60,7 @@ rad = int(cmd_args.radi)
 Name = cmd_args.name
 
 # Connect
-conn = splusdata.connect('Luis', 'plutarco*80')
+conn = splusdata.connect(' ', ' ')
 
 # Getting the colored imge
 for key, value in data.iterrows():
