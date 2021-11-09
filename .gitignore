@@ -3,4 +3,8 @@ Untitled.ipynb
 *.csv
 *.fits
 *~
+*.odt
 !cluster-hdbscan/*.csv
+Plots-hdbscan/*.pdf
+!Plots-lsg-confirmed/*.pdf
+.fuse_*
