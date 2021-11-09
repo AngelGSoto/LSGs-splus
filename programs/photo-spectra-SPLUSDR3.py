@@ -69,32 +69,32 @@ mag_aper_err  = [[] for _ in range(n)]
 print("The numbre of objects for plotting is: %d" % n)
 
 for i in range(n):
-    mag_aper[i].append(data["u_auto"][i]) 
-    mag_aper[i].append(data["J0378_auto"][i])
-    mag_aper[i].append(data["J0395_auto"][i])
-    mag_aper[i].append(data["J0410_auto"][i])
-    mag_aper[i].append(data["J0430_auto"][i])
-    mag_aper[i].append(data["g_auto"][i])
-    mag_aper[i].append(data["J0515_auto"][i]) 
-    mag_aper[i].append(data["r_auto"][i]) 
-    mag_aper[i].append(data["J0660_auto"][i])
-    mag_aper[i].append(data["i_auto"][i]) 
-    mag_aper[i].append(data["J0861_auto"][i]) 
-    mag_aper[i].append(data["z_auto"][i])
+    mag_auto[i].append(data["u_auto"][i]) 
+    mag_auto[i].append(data["J0378_auto"][i])
+    mag_auto[i].append(data["J0395_auto"][i])
+    mag_auto[i].append(data["J0410_auto"][i])
+    mag_auto[i].append(data["J0430_auto"][i])
+    mag_auto[i].append(data["g_auto"][i])
+    mag_auto[i].append(data["J0515_auto"][i]) 
+    mag_auto[i].append(data["r_auto"][i]) 
+    mag_auto[i].append(data["J0660_auto"][i])
+    mag_auto[i].append(data["i_auto"][i]) 
+    mag_auto[i].append(data["J0861_auto"][i]) 
+    mag_auto[i].append(data["z_auto"][i])
 
-    #ERRO Aper
-    mag_aper_err[i].append(float(data["e_u_auto"][i]))
-    mag_aper_err[i].append(float(data["e_J0378_auto"][i]))
-    mag_aper_err[i].append(float(data["e_J0395_auto"][i]))
-    mag_aper_err[i].append(float(data["e_J0410_auto"][i]))
-    mag_aper_err[i].append(float(data["e_J0430_auto"][i]))
-    mag_aper_err[i].append(float(data["e_g_auto"][i]))
-    mag_aper_err[i].append(float(data["e_J0515_auto"][i])) 
-    mag_aper_err[i].append(float(data["e_r_auto"][i])) 
-    mag_aper_err[i].append(float(data["e_J0660_auto"][i])) 
-    mag_aper_err[i].append(float(data["e_i_auto"][i]))
-    mag_aper_err[i].append(float(data["e_J0861_auto"][i]))
-    mag_aper_err[i].append(float(data["e_z_auto"][i]))
+    #ERRO Auto
+    mag_auto_err[i].append(float(data["e_u_auto"][i]))
+    mag_auto_err[i].append(float(data["e_J0378_auto"][i]))
+    mag_auto_err[i].append(float(data["e_J0395_auto"][i]))
+    mag_auto_err[i].append(float(data["e_J0410_auto"][i]))
+    mag_auto_err[i].append(float(data["e_J0430_auto"][i]))
+    mag_auto_err[i].append(float(data["e_g_auto"][i]))
+    mag_auto_err[i].append(float(data["e_J0515_auto"][i])) 
+    mag_auto_err[i].append(float(data["e_r_auto"][i])) 
+    mag_auto_err[i].append(float(data["e_J0660_auto"][i])) 
+    mag_auto_err[i].append(float(data["e_i_auto"][i]))
+    mag_auto_err[i].append(float(data["e_J0861_auto"][i]))
+    mag_auto_err[i].append(float(data["e_z_auto"][i]))
    
     font = {'family': 'serif',
         'color':  'black',
@@ -118,11 +118,11 @@ for i in range(n):
     ax.set_xlabel(r'Wavelength $[\mathrm{\AA]}$', fontsize = 44)
     ax.set_ylabel(r'Magnitude [AB]', fontsize = 44)
 
-    mask = [mag_aper[i][m] != 99.0 for m in range(len(mag_aper[0]))]
-    mask_err = [mag_aper_err[i][m] <= 0.9 for m in range(len(mag_aper_err[0]))]
+    mask = [mag_auto[i][m] != 99.0 for m in range(len(mag_auto[0]))]
+    mask_err = [mag_auto_err[i][m] <= 0.9 for m in range(len(mag_auto_err[0]))]
     mask_t = np.array(mask) & np.array(mask_err)
-    ax.plot(np.array(wl)[mask_err], np.array(mag_aper[i])[mask_err], '-k', alpha=0.2)#, label='Auto')
-    for wl1, mag, mag_err, colors, marker_ in zip(np.array(wl), np.array(mag_aper[i]), np.array(mag_aper_err[i]), color, marker):
+    ax.plot(np.array(wl)[mask_err], np.array(mag_auto[i])[mask_err], '-k', alpha=0.2)#, label='Auto')
+    for wl1, mag, mag_err, colors, marker_ in zip(np.array(wl), np.array(mag_auto[i]), np.array(mag_auto_err[i]), color, marker):
         if mag_err <= 0.9:
             ax.scatter(wl1, mag, color = colors, marker=marker_, s=600, zorder=10)
             ax.errorbar(wl1, mag, yerr=mag_err, marker='.', fmt='.', color=colors, ecolor=colors, elinewidth=5.9, markeredgewidth=5.2,  capsize=20)
